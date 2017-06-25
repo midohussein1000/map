@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title> Map Project</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+	<div class="col-xs-14 col-md-14 col-lg-14" id="container">
+		<div class = "row">
+			<div class="col-xs-12 col-md-12 col-lg-12">
+				<h2>map</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-md-12 col-lg-12">
+				<!-- search box with its list , it can filter search -->
+				<div>
+					<input type="text" style="width:100%;"  placeholder=" search and Filter Locations" data-bind="textInput: SearchText"> 
+				<ul   data-bind="foreach: SeacrhList">
+					<li data-bind="text: name, click: $parent.placeClicker"> </li>
+				</ul>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<!--import google map using api of google  -->
+			<div id="map" class="col-xs-14 col-md-14 col-lg-14 img-responsive"></div>
+		</div>
+	</div>
+
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/knockout-3.2.0.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW2V6TRV8XTlXrnXhBP5EfJ4R69ninV9c&callback=proStart" onerror="mapEr()"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
